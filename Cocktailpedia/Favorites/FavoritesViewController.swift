@@ -5,13 +5,12 @@
 //  Created by Awani Melvyn
 //
 
-import UIKit
 import RealmSwift
+import UIKit
 
 class FavoritesViewController: UIViewController {
-    
-    @IBOutlet weak var tableView: UITableView!
-    
+    @IBOutlet var tableView: UITableView!
+
     var favoritesViewModel: FavoritesViewModelType = FavoritesViewModel()
 
     override func viewDidLoad() {
@@ -25,34 +24,35 @@ class FavoritesViewController: UIViewController {
         super.viewDidAppear(animated)
         favoritesViewModel.retrieveSavedCocktails()
         tableView.reloadData()
-
     }
 }
 
-//MARK: - UITableViewDataSource
+// MARK: - UITableViewDataSource
+
 extension FavoritesViewController: UITableViewDataSource {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_: UITableView, numberOfRowsInSection _: Int) -> Int {
         return favoritesViewModel.favoriteCocktails.count
     }
-    
+
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: FavoritesTableViewCell.identifier) as! FavoritesTableViewCell
         cell.cocktailNameLabel.text = favoritesViewModel.favoriteCocktails[indexPath.row].cocktailName.capitalizingFirstLetter()
-        let url = URL(string: favoritesViewModel.favoriteCocktails[indexPath.row].imageUrl )
+        let url = URL(string: favoritesViewModel.favoriteCocktails[indexPath.row].imageUrl)
         cell.cocktailImage.kf.setImage(with: url)
         return cell
     }
 }
 
-//MARK: - UITableViewDelegate
+// MARK: - UITableViewDelegate
+
 extension FavoritesViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        favoritesViewModel.selectedCocktail = ["\( favoritesViewModel.favoriteCocktails[indexPath.row].cocktailName)": "\(favoritesViewModel.favoriteCocktails[indexPath.row].ingredients)"]
+        favoritesViewModel.selectedCocktail = ["\(favoritesViewModel.favoriteCocktails[indexPath.row].cocktailName)": "\(favoritesViewModel.favoriteCocktails[indexPath.row].ingredients)"]
         performSegue(withIdentifier: Constants.favoritesToCocktailDetailViewSegue, sender: nil)
     }
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+
+    override func prepare(for segue: UIStoryboardSegue, sender _: Any?) {
         let destination = segue.destination as! CocktailDetailsViewController
         destination.cocktailDetailsViewModel.selectedCocktail = favoritesViewModel.selectedCocktail
         destination.cocktailDetailsViewModel.segueStartPoint = .favoritesViewController
@@ -60,16 +60,16 @@ extension FavoritesViewController: UITableViewDelegate {
     }
 
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
-        let deleteAction = UIContextualAction(style: .destructive, title: nil) {[weak self] _, _, completion in
+        let deleteAction = UIContextualAction(style: .destructive, title: nil) { [weak self] _, _, completion in
             let breedName = self?.favoritesViewModel.favoriteCocktails[indexPath.row].cocktailName
             self?.favoritesViewModel.removeFromFavorites(realmObject: PersistenceManager.realm, cocktailName: breedName ?? "")
             tableView.deleteRows(at: [indexPath], with: .automatic)
             completion(true)
         }
         deleteAction.image = UIImage(systemName: "trash")
-        let shareAction = UIContextualAction(style: .normal, title: nil) {[weak self] _, _, completion in
+        let shareAction = UIContextualAction(style: .normal, title: nil) { [weak self] _, _, completion in
             let pasteboard = UIPasteboard.general
-            
+
             pasteboard.string = "Hey! Download Cocktailpedia app to learn about \(self?.favoritesViewModel.favoriteCocktails[indexPath.row].cocktailName ?? "Cocktails")"
             completion(true)
         }
@@ -78,5 +78,4 @@ extension FavoritesViewController: UITableViewDelegate {
         config.performsFirstActionWithFullSwipe = false
         return config
     }
-    
 }

@@ -7,11 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B164C9522CDEDD1B004E8F55 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = B164C9512CDEDD1B004E8F55 /* Kingfisher */; };
 		B18E4C4229120F40002811A5 /* FavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B18E4C4129120F40002811A5 /* FavoritesViewController.swift */; };
 		B18E4C4429120FAC002811A5 /* FavoritesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B18E4C4329120FAC002811A5 /* FavoritesViewModel.swift */; };
 		B18E4C47291210B6002811A5 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = B18E4C46291210B6002811A5 /* Realm */; };
 		B18E4C49291210B6002811A5 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = B18E4C48291210B6002811A5 /* RealmSwift */; };
-		B18E4C4C2912119E002811A5 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = B18E4C4B2912119E002811A5 /* Kingfisher */; };
 		B18E4C4F2912168C002811A5 /* PersistenceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B18E4C4E2912168C002811A5 /* PersistenceManager.swift */; };
 		B18E4C5129121703002811A5 /* CocktailRealm.swift in Sources */ = {isa = PBXBuildFile; fileRef = B18E4C5029121703002811A5 /* CocktailRealm.swift */; };
 		B18E4C532912173E002811A5 /* FavoriteCocktails.swift in Sources */ = {isa = PBXBuildFile; fileRef = B18E4C522912173E002811A5 /* FavoriteCocktails.swift */; };
@@ -104,7 +104,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B18E4C4C2912119E002811A5 /* Kingfisher in Frameworks */,
+				B164C9522CDEDD1B004E8F55 /* Kingfisher in Frameworks */,
 				B18E4C49291210B6002811A5 /* RealmSwift in Frameworks */,
 				B18E4C47291210B6002811A5 /* Realm in Frameworks */,
 			);
@@ -283,7 +283,7 @@
 			packageProductDependencies = (
 				B18E4C46291210B6002811A5 /* Realm */,
 				B18E4C48291210B6002811A5 /* RealmSwift */,
-				B18E4C4B2912119E002811A5 /* Kingfisher */,
+				B164C9512CDEDD1B004E8F55 /* Kingfisher */,
 			);
 			productName = Cocktailpedia;
 			productReference = B1CD145D28D0C1BA004DADE0 /* Cocktailpedia.app */;
@@ -359,7 +359,7 @@
 			mainGroup = B1CD145428D0C1BA004DADE0;
 			packageReferences = (
 				B18E4C45291210B6002811A5 /* XCRemoteSwiftPackageReference "realm-swift" */,
-				B18E4C4A2912119E002811A5 /* XCRemoteSwiftPackageReference "Kingfisher" */,
+				B164C9502CDEDD1B004E8F55 /* XCRemoteSwiftPackageReference "Kingfisher" */,
 			);
 			productRefGroup = B1CD145E28D0C1BA004DADE0 /* Products */;
 			projectDirPath = "";
@@ -773,6 +773,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		B164C9502CDEDD1B004E8F55 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 8.1.0;
+			};
+		};
 		B18E4C45291210B6002811A5 /* XCRemoteSwiftPackageReference "realm-swift" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/realm/realm-swift.git";
@@ -781,17 +789,14 @@
 				kind = branch;
 			};
 		};
-		B18E4C4A2912119E002811A5 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 7.0.0;
-			};
-		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		B164C9512CDEDD1B004E8F55 /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B164C9502CDEDD1B004E8F55 /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
+		};
 		B18E4C46291210B6002811A5 /* Realm */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = B18E4C45291210B6002811A5 /* XCRemoteSwiftPackageReference "realm-swift" */;
@@ -801,11 +806,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = B18E4C45291210B6002811A5 /* XCRemoteSwiftPackageReference "realm-swift" */;
 			productName = RealmSwift;
-		};
-		B18E4C4B2912119E002811A5 /* Kingfisher */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = B18E4C4A2912119E002811A5 /* XCRemoteSwiftPackageReference "Kingfisher" */;
-			productName = Kingfisher;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

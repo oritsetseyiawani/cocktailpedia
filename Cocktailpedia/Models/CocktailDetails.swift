@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct CocktailDetails{
+struct CocktailDetails {
     let fieldName: String
     let fieldValue: String
 }

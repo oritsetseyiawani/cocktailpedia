@@ -7,7 +7,6 @@
 
 import Foundation
 
-struct Cocktail: Codable{
+struct Cocktail: Codable {
     let drinks: [[String: String?]]
 }
-

@@ -1,5 +1,5 @@
 //
-//  UIImageView+Ext.swift
+//  UIView+Extension.swift
 //  Cocktailpedia
 //
 //  Created by Awani Melvyn
@@ -17,6 +17,7 @@ extension UIView {
             layer.masksToBounds = newValue > 0
         }
     }
+
     @IBInspectable var borderWidthV: CGFloat {
         get {
             return layer.borderWidth
@@ -25,6 +26,7 @@ extension UIView {
             layer.borderWidth = newValue
         }
     }
+
     @IBInspectable var borderColorV: UIColor? {
         get {
             return UIColor(cgColor: layer.borderColor!)
@@ -34,4 +36,3 @@ extension UIView {
         }
     }
 }
-

@@ -8,7 +8,7 @@
 import UIKit
 
 class CocktailDetailsTableViewCell: UITableViewCell {
-    @IBOutlet weak var fieldNameLabel: UILabel!
-    @IBOutlet weak var fieldValueLabel: UILabel!
+    @IBOutlet var fieldNameLabel: UILabel!
+    @IBOutlet var fieldValueLabel: UILabel!
     static let identifier = String(describing: CocktailDetailsTableViewCell.self)
 }

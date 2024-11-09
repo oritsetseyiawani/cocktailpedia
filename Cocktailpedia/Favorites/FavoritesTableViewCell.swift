@@ -8,7 +8,7 @@
 import UIKit
 
 class FavoritesTableViewCell: UITableViewCell {
-    @IBOutlet weak var cocktailImage: UIImageView!
-    @IBOutlet weak var cocktailNameLabel: UILabel!
+    @IBOutlet var cocktailImage: UIImageView!
+    @IBOutlet var cocktailNameLabel: UILabel!
     static let identifier = String(describing: FavoritesTableViewCell.self)
 }
