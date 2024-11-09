@@ -3,24 +3,20 @@
 Cocktailpedia is an app that allows users to search and view details on any kind of cocktails, returns an image so the user can see what the end product would look like, as well as the ingredients and instructions to make the cocktail. It also allows users to save their favorite cocktails so that they are readily available to be viewed at a later time without searching for them all over again.
 
 <p align="left">
-  <img src="https://user-images.githubusercontent.com/66224847/212508911-f91ee3e7-68f9-4cd2-8dde-bc2461779d48.png" width="200" />
-  <img src="https://user-images.githubusercontent.com/66224847/212508851-247c6f6c-f8ef-467e-9802-fca022ae8a09.png" width="200" />   
-   <img src="https://user-images.githubusercontent.com/66224847/212508893-415ebaad-556d-4b05-8c12-77f885a0d30b.png" width="200" />
-  <img src="https://user-images.githubusercontent.com/66224847/212509037-c3e7a7f8-4ebd-440f-a9cd-2a89fa915e10.png" width="200" />   
-   <img src="https://user-images.githubusercontent.com/66224847/212509048-e0abecb8-6449-43a6-8eea-d466ad8d7fa9.png" width="200" />
-  <img src="https://user-images.githubusercontent.com/66224847/212509057-0f060e70-85a6-4046-8266-576aafb29c44.png" width="200" />   
-  
+  <img src="https://user-images.githubusercontent.com/66224847/199629239-a9ba7b0f-06ab-4511-94b3-cdc46b7af560.png" width="200" />
+  <img src="https://user-images.githubusercontent.com/66224847/199629247-abe8d1c7-13bf-4b67-8032-74231c93275d.png" width="200" /> 
+  <img src="https://user-images.githubusercontent.com/66224847/199629250-7179fb12-7442-4017-9f84-dc32021a7cb1.png" width="200"/>
+  <img src="https://user-images.githubusercontent.com/66224847/199629256-ebca43ff-cd58-4875-bd9e-ebae64dfe533.png" width="200" /> 
+  <img src="https://user-images.githubusercontent.com/66224847/199629275-5cf3f1f9-fc25-4780-9027-23a21ca99622.png" width="200" />
+  <img src="https://user-images.githubusercontent.com/66224847/199629277-1613d167-4901-46f2-a78b-b7f27097bc19.png" width="200" /> 
+  <img src="https://user-images.githubusercontent.com/66224847/199629278-cd1a1418-d56a-4ae0-8bbb-987cd70f068d.png" width="200"/>
+  <img src="https://user-images.githubusercontent.com/66224847/199629282-053ce861-6f83-45db-a355-b633ec946069.png" width="200" /> 
 </p>
 
-
-
-
 ### Tools Used: ###
-
 * Swift
 * UiKit
 * Combine
-
 * URLSession
 * Swift Package Manager
 * Kingfisher
@@ -33,4 +29,3 @@ Cocktailpedia is an app that allows users to search and view details on any kind
 
 ### Unit Tests
 * XCTest
-
